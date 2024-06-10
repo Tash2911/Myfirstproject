@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SweetTooth</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 50px;
+        font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+      }
+      h2 {
+        color: #ff5d9e;
+        font-size: 40px;
+        .blink-text {
+          animation: blink-animation 1s steps(5, start) infinite;
+          -webkit-animation: blink-animation 1s steps(5, start) infinite;
+          font-size: 40px;
+          font-family: sans-serif;
+          color: #ff5d9e;
+          border: 3px solid #83cee0;
+        }
+      }
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      .circle-image {
+        width: 300px;
+        border-radius: 70%;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+      p {
+        font-size: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .wikipedia {
+        text-decoration: none;
+        font-family: sans-serif;
+        color: #ff5d9e;
+        font-size: 20px;
+      }
+      .wikipedia:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        border-radius: 30%;
+        font-size: 30px;
+        padding: 10px 20px;
+        color: #702283;
+        background-color: #8ed6ff;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #ff5d9e;
+      }
+      body {
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/114/887/original/background_image.jpg?1707648709);
+        background-size: cover;
+      }
+      .myself {
+        font-size: 20px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", "Verdana", "sans-serif";
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <span style="color: #702283">Ice cream🍨</span>
+      <span style="color: #ff5d9e">And</span>
+      <span style="color: #6643b5">Milkshake🥤</span>
+    </h1>
+    <h2>
+      <span class="blink-text">I Love Strawberry Flavour🍓</span>
+    </h2>
+    <div>
+      <img
+        src="https://cdn.pixabay.com/photo/2021/11/13/00/17/drink-6790282_640.png"
+        alt="milkshake"
+        width="300"
+        height="300"
+        style="display: block"
+      />
+      <p>
+        <span style="color: #6643b5"
+          >A milkshake is a sweet beverage made by blending milk, ice cream, and
+          flavorings or sweeteners such as butterscotch, caramel sauce,
+          chocolate syrup, or fruit syrup into a thick, sweet, cold
+          mixture.</span
+        >
+      </p>
+    </div>
+    <div>
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/114/889/original/ice-cream-1.jpg?1707653984"
+        alt=" icecream"
+        class="circle-image"
+        style="float: inline-end; margin-left: 10px"
+      />
+      <p>
+        <span style="display: inline-block; color: #702283"
+          >Ice cream is a frozen dessert typically made from milk or cream that
+          has been flavoured with a sweetener, either sugar or an alternative,
+          and a spice, such as cocoa or vanilla, or with fruit, such as
+          strawberries or peaches...</span
+        >
+      </p>
+    </div>
+    <br />
+    <a
+      href="https://en.wikipedia.org/wiki/Main_Page"
+      target="_blank"
+      class="wikipedia"
+    >
+      <strong>Learn more from wikipedia</strong>
+    </a>
+    <button>🥤Choose your favourite🍨</button>
+    <p class="myself">
+      <span style="color: #6643b5">This page was built by:</span>
+      <span style="color: #ff5d9e"><strong> Natasha Yaka</strong></span>
+    </p>
+    <script>
+      function favourite() {
+        let name = prompt("What is your name?");
+        let favourite = prompt("What is your favourite flavor😋?");
+        favourite = favourite.toLowerCase().trim();
+        if (favourite === "strawberry") {
+          let h2 = document.querySelector("h2");
+          h2.innerHTML =
+            "Awesome!" +
+            " " +
+            name +
+            " " +
+            "we share the same favourite flavour😋🍓";
+        } else {
+          let h2 = document.querySelector("h2");
+          h2.innerHTML = "Hi!" + " " + name + " " + "you have great taste👌";
+        }
+      }
+      let chooseButton = document.querySelector("button");
+      chooseButton.addEventListener("click", favourite);
+    </script>
+  </body>
+</html>
